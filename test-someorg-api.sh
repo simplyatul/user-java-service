@@ -1,12 +1,12 @@
 #!/bin/bash
 
-set -o xtrace
+#set -o xtrace
 
 BASE_URL="http://localhost:8080/someorg/v1"
 EMAIL="ramsaraf@gmail.com"
 ENC_EMAIL=$(echo "$EMAIL" | sed 's/@/%40/')
 
-echo "👉 Creating user..."
+echo "=> Creating user..."
 curl -s -X POST "$BASE_URL/user" -H "Content-Type: application/json" -d '{
   "firstName": "Ram",
   "lastName": "Saraf",
@@ -14,11 +14,11 @@ curl -s -X POST "$BASE_URL/user" -H "Content-Type: application/json" -d '{
 }'
 echo -e "\n"
 
-echo "👉 Fetching user..."
+echo "=> Fetching user..."
 curl -s -X GET "$BASE_URL/user?email_id=$ENC_EMAIL"
 echo -e "\n"
 
-echo "👉 Adding education..."
+echo "=> Adding education..."
 curl -s -X POST "$BASE_URL/user/$ENC_EMAIL/education" -H "Content-Type: application/json" -d '{
   "instituteName": "Garware College",
   "degreeName": "MSc",
@@ -29,11 +29,11 @@ curl -s -X POST "$BASE_URL/user/$ENC_EMAIL/education" -H "Content-Type: applicat
 }'
 echo -e "\n"
 
-echo "👉 Getting educations..."
+echo "=> Getting educations..."
 curl -s -X GET "$BASE_URL/user/$ENC_EMAIL/education"
 echo -e "\n"
 
-echo "👉 Adding professional experience..."
+echo "=> Adding professional experience..."
 curl -s -X POST "$BASE_URL/user/$ENC_EMAIL/professionalexp" -H "Content-Type: application/json" -d '{
   "orgName": "Yahoo",
   "position": "SWE",
@@ -43,11 +43,11 @@ curl -s -X POST "$BASE_URL/user/$ENC_EMAIL/professionalexp" -H "Content-Type: ap
 }'
 echo -e "\n"
 
-echo "👉 Getting professional experiences..."
+echo "=> Getting professional experiences..."
 curl -s -X GET "$BASE_URL/user/$ENC_EMAIL/professionalexp"
 echo -e "\n"
 
-echo "👉 Deleting user..."
+echo "=> Deleting user..."
 curl -s -X DELETE "$BASE_URL/user/$ENC_EMAIL"
 echo -e "\n"
 
