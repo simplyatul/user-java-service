@@ -1,9 +1,11 @@
-package com.someorg.service;
+package com.someorg.tests.service;
 
 import com.someorg.exception.ResourceNotFoundException;
 import com.someorg.exception.UserAlreadyExistsException;
 import com.someorg.model.User;
 import com.someorg.repository.UserRepository;
+import com.someorg.service.UserService;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.*;

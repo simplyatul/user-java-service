@@ -1,10 +1,12 @@
-package com.someorg.service;
+package com.someorg.tests.service;
 
 import com.someorg.exception.ResourceNotFoundException;
 import com.someorg.model.Education;
 import com.someorg.model.User;
 import com.someorg.repository.EducationRepository;
 import com.someorg.repository.UserRepository;
+import com.someorg.service.EducationService;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.*;
