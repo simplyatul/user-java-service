@@ -13,7 +13,7 @@ public class UserController {
 
     private final UserService userService;
 
-    @PostMapping("/users")
+    @PostMapping("/user")
     public ResponseEntity<?> createUser(@RequestBody User user) {
         userService.createUser(user);
         return ResponseEntity.ok().build();

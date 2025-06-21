@@ -1,4 +1,4 @@
-package com.someorg.users;
+package com.someorg;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
