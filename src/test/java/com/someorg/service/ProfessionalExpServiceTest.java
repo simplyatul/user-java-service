@@ -33,7 +33,7 @@ class ProfessionalExpServiceTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        user = new User("test@example.com", "Test", "User", null, null);
+        user = new User("test@example.com", "Test", "User");
         experience = new ProfessionalExperience(null, user, "Google", "SDE",
                           LocalDate.of(2015, 1, 1), LocalDate.of(2020, 1, 1), false);
     }

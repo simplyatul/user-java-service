@@ -33,7 +33,7 @@ class EducationServiceTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        user = new User("test@example.com", "Test", "User", null, null);
+        user = new User("test@example.com", "Test", "User");
         education = new Education(null, user, "MIT", "BSc", "https://mit.edu",
                                   LocalDate.of(2010, 1, 1), LocalDate.of(2014, 1, 1), false);
     }

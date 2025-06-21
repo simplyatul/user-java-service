@@ -3,8 +3,6 @@ package com.someorg.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.List;
-
 @Entity
 @Table(name = "users")
 @Data
@@ -21,10 +19,4 @@ public class User {
 
     @Column(name = "last_name", nullable = false)
     private String lastName;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<Education> educations;
-
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<ProfessionalExperience> professionalExperiences;
 }
