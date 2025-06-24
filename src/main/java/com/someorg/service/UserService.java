@@ -5,6 +5,9 @@ import com.someorg.exception.UserAlreadyExistsException;
 import com.someorg.model.User;
 import com.someorg.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 @Service
@@ -28,5 +31,9 @@ public class UserService {
     public void deleteUser(String email) {
         User user = getUserByEmail(email);
         userRepository.delete(user);
+    }
+    
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 }

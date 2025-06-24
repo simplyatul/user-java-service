@@ -3,6 +3,9 @@ package com.someorg.controller;
 import com.someorg.model.User;
 import com.someorg.service.UserService;
 import lombok.RequiredArgsConstructor;
+
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,5 +31,10 @@ public class UserController {
     public ResponseEntity<?> deleteUser(@PathVariable("email_id") String emailId) {
         userService.deleteUser(emailId);
         return ResponseEntity.ok().build();
+    }
+    
+    @GetMapping("/users")
+    public ResponseEntity<List<User>> getAllUsers() {
+        return ResponseEntity.ok(userService.getAllUsers());
     }
 }
